@@ -1,0 +1,138 @@
+\include{./settings}
+
+% ====================== 个人信息 ======================
+% 学院信息
+\newcommand{\school}{\small{信息科学与工程学院 | School of Information Science and Engineering}}
+
+% 联系方式
+\newcommand{\contact}{
+    \scriptsize  % 使用较小字号
+    \textcolor{white}{
+        % 邮箱
+        \faEnvelope \quad \href{mailto:example@stu.hit.edu.cn}{example@stu.hit.edu.cn}
+        \hspace{4em}
+        % 手机号
+        \faPhone \quad  123-4567-8901
+        % GitHub
+        \hspace{4em}
+        \faGithub \quad \href{https://github.com/example}{https://github.com/example}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%
+% 简历正文
+%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% ====================== 页眉 ======================
+% 包含校徽、学院名称等信息
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north, inner sep=0pt](header) at (current page.north){
+        \includegraphics[width=\paperwidth]{images/header.png}
+    };
+    \node[anchor=west](school_logo) at (header.west){
+        \hspace{0.2cm}
+        \includegraphics[width=.34\textwidth]{images/hitwh_logo_name.png}
+    };
+    \node[anchor=east](school_name) at(header.east){
+        \textcolor{white}{\textbf{\school}}
+        \hspace{0.5cm}
+    };
+\end{tikzpicture}
+\vspace{-3.5em}
+
+% ====================== 页脚 ======================
+% 包含联系方式
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=south, inner sep=0pt](footer) at (current page.south){
+       \includegraphics[width=\paperwidth]{images/footer.png}
+    };
+    \node[anchor=center] at(footer.center){\contact};
+\end{tikzpicture}
+
+% ====================== 背景 ======================
+% 添加校徽水印
+\begin{tikzpicture}[remember picture, overlay]
+    \node[opacity=0.05] at(current page.center){
+        \includegraphics[width=0.7\paperwidth, keepaspectratio]{images/hitwh_logo.png}
+    };
+\end{tikzpicture}
+
+% ====================== 个人信息 ======================
+\begin{figure}[h]
+    \begin{minipage}{0.82\textwidth}
+        \section{\makebox[\widthof{\faAddressCard}][c]{\color{HIT_Blue}{\faAddressCard}}\quad 个人信息}
+        \begin{tabularx}{\linewidth}{p{\widthof{出生日期:}}Xp{\widthof{政治面貌:}}X}
+            姓\ \ \ \ \ \ \ \ 名: & 张三 & 
+            性\ \ \ \ \ \ \ \ 别: & 男  \\
+            出生年月: & 2000年1月 & 
+            政治面貌: & 预备党员 \\
+        \end{tabularx}
+    \end{minipage}
+    \hspace{2em}
+    \begin{minipage}{0.12\textwidth}
+        \setlength{\fboxsep}{0pt}
+        \doublebox{\includegraphics[width=\linewidth]{images/avatar.png}}
+    \end{minipage}
+\end{figure}
+\vspace{-1em}
+
+% ====================== 教育背景 ======================
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{HIT_Blue}{\faGraduationCap}}\quad 教育背景}
+\vspace{-0.5em}
+\begin{table}[h!]
+    \begin{tabularx}{\textwidth}{XXp{\widthof{2022年 -- 预计2026年6月毕业}}}
+        哈尔滨工业大学（威海） & 软件工程 & 2022年 -- 预计2026年6月\\
+        \textbf{GPA: 3.99/4.00} & \textbf{学分绩排名: 1/100} & \textbf{综测排名: 1/100} \\
+    \end{tabularx}
+\end{table}
+\begin{tabularx}{\textwidth}{@{}XlX@{}}
+    \textbf{2023.09-2024.03} & 班级团支书 & \\
+    \textbf{2024.09-2024.12} & 学生会主席 & \\
+\end{tabularx}
+
+% ====================== 项目经历 ======================
+\section{\makebox[\widthof{\faChalkboardTeacher}][c]{\color{HIT_Blue}{\faChalkboardTeacher}}\quad 在校项目}
+\vspace{0.5em}
+{\large{\textbf{智能图书馆管理系统}}} \hfill {进行中}\\
+基于Spring Boot和Vue.js开发的图书馆管理系统，实现了图书借阅、归还、预约等功能，采用微服务架构，使用Redis缓存提高系统性能。
+
+\vspace{1em}
+{\large{\textbf{校园二手交易平台}}} \hfill {完结}\\
+使用Django框架开发的校园二手交易平台，实现了用户注册、商品发布、在线交易等功能，采用RESTful API设计，使用JWT进行用户认证。
+
+\vspace{1em}
+{\large{\textbf{基于深度学习的图像分类系统}}} \hfill {完结}\\
+使用PyTorch框架实现的图像分类系统，基于ResNet模型，在CIFAR-10数据集上达到了92\%的准确率，并开发了友好的Web界面。
+
+% ====================== 竞赛经历 ======================
+\section{\makebox[\widthof{\faTrophy}][c]{\color{HIT_Blue}{\faTrophy}}\quad 竞赛经历}
+\vspace{-1em}
+\begin{table}[h!]
+    \begin{tabularx}{\textwidth}{Xp{\widthof{第零零负责人人人}}p{\widthof{国家级-第100名}}p{\widthof{2030年13月}}}
+        \textbf{2023年全国大学生数学建模竞赛} & 队长 & 全国一等奖 & 2023年9月 \\
+        \textbf{2023年"互联网+"大学生创新创业大赛} & 核心成员 & 省级金奖 & 2023年7月\\
+        \textbf{2023年ACM-ICPC亚洲区域赛} & 队员 & 铜奖 & 2023年11月\\
+    \end{tabularx}
+\end{table}
+
+% ====================== 技能特长 ======================
+\section{\makebox[\widthof{\faWrench}][c]{\color{HIT_Blue}{\faWrench}}\quad 技能特长}
+\vspace{0.5em}
+\begin{itemize}
+    \item 编程语言：熟练掌握Java、Python、C++，了解Go、Rust
+    \item Web开发：熟悉Spring Boot、Django、Vue.js等框架
+    \item 数据库：熟练使用MySQL、Redis、MongoDB
+\end{itemize}
+
+% ====================== 所获荣誉 ======================
+\section{\makebox[\widthof{\faStar}][c]{\color{HIT_Blue}{\faStar}}\quad 所获荣誉}
+\vspace{-1em}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 2022-2023学年一等奖学金
+        \item 2022-2023学年校级优秀学生干部
+    \end{itemize}
+\end{multicols}
+
+\end{document}

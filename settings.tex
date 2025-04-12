@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage{xltxtra}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\usepackage{url}
+\urlstyle{tt}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{relsize}
+\usepackage{xspace}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{fontspec}
+\usepackage{fancybox}
+\usepackage{float}
+
+% ====================== 基础设置 ======================
+% 取消中文字符与数字之间的间隔
+\CJKsetecglue{}
+
+% 定义美观的C++排版
+\protected\def\Cpp{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.28ex}{\relsize{-1}++}}\xspace}
+
+% 全局格式设置
+\setlength{\parindent}{0pt}    % 取消段落缩进
+\pagenumbering{gobble}         % 取消页码显示
+
+% 列表格式设置
+\setlist[itemize]{topsep=0em, leftmargin=*}    % 项目符号列表格式
+\setlist[enumerate]{topsep=0em, leftmargin=*}  % 编号列表格式
+
+% ====================== 标题格式设置 ======================
+% 一级标题格式
+\titleformat{\section}
+  {\LARGE\bfseries\raggedright}  % 字体：LARGE，加粗，左对齐
+  {}{0em}                        % 标题前缀
+  {}                             % 标题代码
+  [{\color{HIT_Blue}\titlerule}]% 标题下方蓝色分隔线
+\titlespacing*{\section}{0cm}{*1.2}{*1.2}  % 间距设置
+
+% 二级标题格式  
+\titleformat{\subsection}
+  {\large\bfseries\raggedright}  % 字体：large，加粗，左对齐
+  {}{0em}                        % 标题前缀
+  {}                             % 标题代码
+  []
+\titlespacing*{\subsection}{0cm}{*1.2}{*1.2}  % 间距设置
+
+% ====================== 页面布局设置 ======================
+% 页面尺寸与边距
+\usepackage[
+    a4paper,
+    left=1.2cm,
+    right=1.2cm,
+    top=1.5cm,
+    bottom=1cm,
+    nohead
+]{geometry}
+
+% 表格与正文行距设置
+\renewcommand{\arraystretch}{1.2}  % 表格行距
+\linespread{1.2}                   % 正文行距
+\renewcommand{\CJKglue}{\hskip 0.05em}  % 中文字符间距
+
+% ====================== 字体设置 ======================
+% 英文字体：狮尾四季春
+\setmainfont[
+    Path=fonts/,
+    Extension=.ttf,
+    BoldFont=* Bold,
+]{SweiSpring}
+
+% 中文字体：狮尾四季春
+\setCJKmainfont[
+    Path=fonts/,
+    Extension=.ttf,
+    BoldFont=* Bold,
+]{SweiSpring}
+
+% ====================== 主题色设置 ======================
+% 哈工大校徽标准色（RGB: 0, 83, 117），参考https://xcb.hitwh.edu.cn/_upload/article/files/fa/5c/e1e0bdb340e98b473b5a0e34963c/6250efd5-f74a-47bb-b5a7-8a8b86f9451b.pdf第14页
+\definecolor{HIT_Blue}{RGB}{0, 83, 117}
