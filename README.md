@@ -1,1 +1,1 @@
-# hit-cv-template-chinese
+# hitwh-cv-template-chinese
