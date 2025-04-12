@@ -3,6 +3,8 @@
 ## 致谢
 本模板基于[西北工业大学中文CV模板](https://www.overleaf.com/latex/templates/npu-cv/mncqzxhvfzrx)和[北京邮电大学BUPT简历模板](https://github.com/Yokumii/BUPT-CV-Template)进行调整，感谢两个模板的作者！
 
+字体跟BUPT模板一样，用的是[狮尾四季春](https://github.com/max32002/swei-spring)，感谢max！
+
 ## 使用说明
 
 1. 克隆本仓库：
