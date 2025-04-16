@@ -30,6 +30,7 @@
    ```powershell
    xelatex main.tex
    ```
+   也可以在所在文件夹，运行PowerShell脚本`buildpdf.ps1`，可以直接实现编译和删除编译产生的临时文件
 
 5. 查看结果：
    - 生成的 PDF 文件为 `main.pdf`
