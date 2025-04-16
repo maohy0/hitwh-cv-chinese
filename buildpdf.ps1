@@ -2,47 +2,45 @@
 xelatex main.tex
 
 # 删除编译产生的临时文件
-$confirmation = Read-Host -Prompt "要删除临时文件吗，按回车键继续，不删除可Ctrl+C中断程序"
+$confirmation = Read-Host -Prompt "Are you sure to delete temporary files? If no, you could press Ctrl+C to interrupt"
 
 if ($confirmation -eq ""){
-  del *.???~
-  del *.aux /s
-  del *.bak /s
-  del *.blg /s
-  del *.cut /s
-  del *.fdb_latexmk /s
-  del *.fls /s
-  del *.idx /s
-  del *.ilg /s
-  del *.ind /s
-  del *.lof /s
-  del *.log /s
-  del *.lot /s
-  del *.out /s
-  del *.snm /s
-  del *.thm /s
-  del *.tmp /s
-  del *.toc /s
-  del ctextemp*.* /s
-  del *.bst /s
-  del *.spl /s
-  del *.dvi /s
-  del *.pos /s
-  del *.ps /s
-  del *.sav /s
-  del *.bbl /s
+  Remove-Item -Path *.???~ -ErrorAction SilentlyContinue
+  Remove-Item -Path *.aux -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.bak -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.blg -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.cut -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.fdb_latexmk -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.fls -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.idx -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.ilg -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.ind -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.lof -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.log -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.lot -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.out -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.snm -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.thm -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.tmp -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.toc -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path ctextemp*.* -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.bst -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.spl -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.dvi -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.pos -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.ps -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.sav -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.bbl -Recurse -Force -ErrorAction SilentlyContinue
   
-  del Thumbs.db /s
+  Remove-Item -Path Thumbs.db -Recurse -Force -ErrorAction SilentlyContinue
   
-  del *.nav /s
-  del *.vrb /s
-  del *.synctex.gz(busy) /s
-  del *.gnuplot /s
+  Remove-Item -Path *.nav -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.vrb -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.gnuplot -Recurse -Force -ErrorAction SilentlyContinue
   
-  ::
-  del *.synctex.gz /s
-  del *.glo
-  del *.ist
-  del *.toe
+  Remove-Item -Path *.synctex.gz -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.glo -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.ist -Recurse -Force -ErrorAction SilentlyContinue
+  Remove-Item -Path *.toe -Recurse -Force -ErrorAction SilentlyContinue
 
 }
