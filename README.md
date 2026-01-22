@@ -9,7 +9,7 @@
 
 1. 克隆本仓库：
    ```bash
-   git clone https://github.com/maohy0/hitwh-cv-chinese
+   git clone https://github.com/maohy0/hitwh-cv-chinese.git
    ```
    没有git的同学可以直接下载zip文件，解压后使用
 
